@@ -1,0 +1,51 @@
+version: '3'
+services:
+
+    app-nginx:
+        build:
+            context: ./app/docker
+            dockerfile: nginx.docker
+        volumes:
+            -  ./app:/var/www/app
+        ports:
+            - "8080:80"
+    app-php-fpm:
+        build:
+            context: ./app/docker
+            dockerfile: php-fpm.docker
+        volumes:
+            - ./app:/var/www/app
+    app-php-cli:
+        build:
+            context: ./app/docker
+            dockerfile: php-cli.docker
+        volumes:
+            - ./app:/var/www/app
+        working_dir: /var/www/app
+        tty: true
+
+    mysql:
+        build:
+            context: ./app/docker
+            dockerfile: mysql.docker
+        restart: 'always'
+        volumes:
+            - ./app/var/data/mysql:/var/lib/mysql
+            - ./app/var/log/mysql:/var/log/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=symfony
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+        ports:
+            - "3306:3306"
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: sf4_phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+        ports:
+            - 8081:80
+        links:
+            - mysql
