@@ -24,6 +24,13 @@ services:
         working_dir: /var/www/app
         tty: true
 
+    app-nodejs:
+        image: node:10.11-jessie
+        volumes:
+            - ./app:/var/www/app
+        working_dir: /var/www/app
+        tty: true  #позволяет процесу nodejs висеть постояно
+
     mysql:
         build:
             context: ./app/docker

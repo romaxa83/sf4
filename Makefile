@@ -17,8 +17,21 @@ docker-stop:
 docker-show:
 	@sudo docker ps
 
+yarn-install:
+	docker-compose exec app-nodejs yarn install
+
+yarn-build:
+	docker-compose exec app-nodejs yarn run build
+
+webpack-watch:
+	@sudo docker-compose exec app-nodejs ./node_modules/.bin/encore dev --watch
+
 permissions:
 	@sudo chmod 777 -R app/var
+	@sudo chmod 777 -R app/package.json
+	@sudo chmod 777 -R app/node_modules
+	@sudo chmod 777 -R app/yarn.lock
+	@sudo chmod 777 -R app/public/build
 
 connect-nginx:
 	@sudo docker exec -it $(docker_nginx) bash
