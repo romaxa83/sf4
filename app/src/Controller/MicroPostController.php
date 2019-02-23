@@ -6,13 +6,14 @@ use App\Entity\MicroPost;
 use App\Form\MicroPostType;
 use App\Repository\MicroPostRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Form\FormFactoryInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 
 /**
@@ -33,20 +34,25 @@ class MicroPostController
      */
     private $formFactory;
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     private $entityManager;
     /**
      * @var RouterInterface
      */
     private $router;
+    /**
+     * @var FlashBagInterface
+     */
+    private $flashBag;
 
     public function __construct(
         \Twig_Environment $twig,
         MicroPostRepository $microPostRepository,
         FormFactoryInterface $formFactory,
         EntityManagerInterface $entityManager,
-        RouterInterface $router
+        RouterInterface $router,
+        FlashBagInterface $flashBag
     )
     {
         $this->twig = $twig;
@@ -54,6 +60,7 @@ class MicroPostController
         $this->formFactory = $formFactory;
         $this->entityManager = $entityManager;
         $this->router = $router;
+        $this->flashBag = $flashBag;
     }
 
     /**
@@ -62,10 +69,49 @@ class MicroPostController
     public function index()
     {
         $html = $this->twig->render('micro-post/index.html.twig',[
-            'posts' => $this->microPostRepository->findAll()
+            'posts' => $this->microPostRepository->findBy([],['time' => 'DESC'])
         ]);
 
         return new Response($html);
+    }
+
+    /**
+     * @Route("/edit/{id}",name="micro_post_edit")
+     */
+    public function edit(MicroPost $microPost, Request $request)
+    {
+        $form = $this->formFactory->create(
+            MicroPostType::class,$microPost
+        );
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $this->entityManager->flush();
+
+            return new RedirectResponse(
+                $this->router->generate('micro_post_index')
+            );
+        }
+        return new Response(
+            $this->twig->render('micro-post/add.html.twig',[
+                'form' => $form->createView()
+            ])
+        );
+    }
+
+    /**
+     * @Route("/delete/{id}",name="micro_post_delete")
+     */
+    public function delete(MicroPost $microPost)
+    {
+        $this->entityManager->remove($microPost);
+        $this->entityManager->flush();
+
+        $this->flashBag->add('notice','Пост был удален.');
+
+        return new RedirectResponse(
+            $this->router->generate('micro_post_index')
+        );
     }
 
     /**
@@ -93,6 +139,20 @@ class MicroPostController
         return new Response(
             $this->twig->render('micro-post/add.html.twig',[
                 'form' => $form->createView()
+            ])
+        );
+    }
+
+    /**
+     * @Route("/{id}",name="micro_post_post")
+     */
+    public function post($id)
+    {
+        $post = $this->microPostRepository->find($id);
+
+        return new Response(
+            $this->twig->render('micro-post/post.html.twig',[
+                'post' => $post
             ])
         );
     }
