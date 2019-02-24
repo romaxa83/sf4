@@ -1,20 +1,33 @@
 security:
+    encoders:
+        App\Entity\User: bcrypt
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        database_users:
+            entity: { class: App\Entity\User, property: username }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: true
+            pattern: ^/
 
             # activate different ways to authenticate
 
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: true
+            form_login:
+                check_path: security_login
+                login_path: security_login
+                csrf_token_generator: security.csrf.token_manager
+                default_target_path: micro_post_index
+#
+            logout:
+                path: security_logout
+                target: micro_post_index
+#
             # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
