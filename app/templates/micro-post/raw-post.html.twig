@@ -1,7 +1,7 @@
 <div class="media text-muted ml-3 pt-3">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                 <span class="d-block" >
-                    <strong class="text-gray-dark">@username</strong> -- {{ post.time|date("d/m/Y") }}
+                    <strong class="text-gray-dark">@{{ post.user.username }}</strong> -- {{ post.time|date("d/m/Y") }}
                 </span>
         {{ post.text }}
     </p>
