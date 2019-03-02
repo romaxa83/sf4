@@ -17,13 +17,15 @@
 
     {% for post in posts %}
 
-        <a href="{{ path('micro_post_post', {'id': post.id}) }}">
-            {{ include('micro-post/raw-post.html.twig', {'post':post}) }}
-        </a>
+        {{ include('micro-post/raw-post.html.twig', {'post':post}) }}
 
         <small class="d-block text-right mr-3">
-            <a href="{{ path('micro_post_edit', {'id': post.id}) }}">Edit</a>
-            <a href="{{ path('micro_post_delete', {'id': post.id}) }}">Delete</a>
+            {% if is_granted('edit',post) %}
+                <a href="{{ path('micro_post_edit', {'id': post.id}) }}">Edit</a>
+            {% endif %}
+            {% if is_granted('delete',post) %}
+                <a href="{{ path('micro_post_delete', {'id': post.id}) }}">Delete</a>
+            {% endif %}
         </small>
     {% endfor %}
 {% endblock %}

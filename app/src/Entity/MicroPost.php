@@ -31,7 +31,7 @@ class MicroPost
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="posts")
-     * @ORM\JoinColumn()
+     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
@@ -70,6 +70,14 @@ class MicroPost
     public function setTime($time): void
     {
         $this->time = $time;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function setTimeOnPersist(): void
+    {
+        $this->time = new \DateTime();
     }
 
     /**
