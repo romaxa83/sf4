@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MicroPostRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class MicroPost
 {

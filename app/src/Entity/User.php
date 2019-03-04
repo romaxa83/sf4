@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -68,9 +69,27 @@ class User implements UserInterface, \Serializable
      */
     private $posts;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User",mappedBy="following")
+     */
+    private $followers;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User",inversedBy="followers")
+     * @ORM\JoinTable(name="following",
+     *     joinColumns={
+     *          @ORM\JoinColumn(name="user_id",referencedColumnName="id")
+     *     },inverseJoinColumns={
+     *          @ORM\JoinColumn(name="following_user_id",referencedColumnName="id")
+     *     })
+     */
+    private $following;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
+        $this->followers = new ArrayCollection();
+        $this->following = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -205,5 +224,21 @@ class User implements UserInterface, \Serializable
     public function setPosts($posts): void
     {
         $this->posts = $posts;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getFollowing()
+    {
+        return $this->following;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getFollowers()
+    {
+        return $this->followers;
     }
 }

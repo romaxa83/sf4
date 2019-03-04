@@ -22,7 +22,6 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 /**
  * @Route("/micro-post")
- * @ORM\HasLifecycleCallback()
  */
 class MicroPostController extends AbstractController
 {
@@ -136,7 +135,7 @@ class MicroPostController extends AbstractController
         $user = $tokenStorage->getToken()->getUser();
 
         $microPost = new MicroPost();
-        $microPost->setTime(new \DateTime());
+//        $microPost->setTime(new \DateTime());
         $microPost->setUser($user);
 
         $form = $this->formFactory->create(
@@ -165,12 +164,13 @@ class MicroPostController extends AbstractController
      */
     public function userPosts(User $userWithPosts)
     {
-        $html = $this->twig->render('micro-post/index.html.twig',[
-//            'posts' => $this->microPostRepository->findBy(
-//                ['user' => $userWithPosts],
-//                ['time' => 'DESC']
-//            )
-            'posts' => $userWithPosts->getPosts()
+        $html = $this->twig->render('micro-post/user-posts.html.twig',[
+            'posts' => $this->microPostRepository->findBy(
+                ['user' => $userWithPosts],
+                ['time' => 'DESC']
+            ),
+            'user' => $userWithPosts
+//            'posts' => $userWithPosts->getPosts()
         ]);
 
         return new Response($html);
