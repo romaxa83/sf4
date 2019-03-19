@@ -2,15 +2,16 @@
 
 namespace App\Controller;
 use App\Entity\User;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Security("is_granted('ROLE_USER')")
  * @Route("/following")
  */
-class FollowingController extends Controller
+class FollowingController extends AbstractController
 {
     /**
      * @Route("/follow/{id}", name="following_follow")
@@ -21,7 +22,7 @@ class FollowingController extends Controller
         $currentUser = $this->getUser();
 
         if($userToFollow->getId() !== $currentUser->getId()){
-            $currentUser->getFollowing()->add($userToFollow);
+            $currentUser->follow($userToFollow);
 
             $this->getDoctrine()->getManager()->flush();
         }

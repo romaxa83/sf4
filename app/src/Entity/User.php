@@ -59,6 +59,15 @@ class User implements UserInterface, \Serializable
     private $fullName;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MicroPost", mappedBy="likedBy")
+     * @ORM\JoinTable(name="post_likes",
+     *      joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     * )
+     */
+    private $postsLiked;
+
+    /**
      * @var array
      * @ORM\Column(type="simple_array")
      */
@@ -90,6 +99,7 @@ class User implements UserInterface, \Serializable
         $this->posts = new ArrayCollection();
         $this->followers = new ArrayCollection();
         $this->following = new ArrayCollection();
+        $this->postsLiked = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -240,5 +250,24 @@ class User implements UserInterface, \Serializable
     public function getFollowers()
     {
         return $this->followers;
+    }
+
+    /**
+     * @param User $userToFollow
+     */
+    public function follow(User $userToFollow)
+    {
+        if ($this->getFollowing()->contains($userToFollow)){
+            return;
+        }
+        $this->getFollowing()->add($userToFollow);
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getPostsLiked()
+    {
+        return $this->postsLiked;
     }
 }
