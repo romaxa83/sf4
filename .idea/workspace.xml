@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b12f86b-f207-40ec-a855-faa2e276906e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/Controller/LikesController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/Controller/NotificationController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/templates/notification/notifications.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/FollowingController.php" afterPath="$PROJECT_DIR$/app/src/Controller/FollowingController.php" />
-      <change beforePath="$PROJECT_DIR$/app/src/Entity/MicroPost.php" afterPath="$PROJECT_DIR$/app/src/Entity/MicroPost.php" />
-      <change beforePath="$PROJECT_DIR$/app/src/Entity/User.php" afterPath="$PROJECT_DIR$/app/src/Entity/User.php" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yaml" afterPath="$PROJECT_DIR$/app/config/services.yaml" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/LikesController.php" afterPath="$PROJECT_DIR$/app/src/Controller/LikesController.php" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/NotificationController.php" afterPath="$PROJECT_DIR$/app/src/Controller/NotificationController.php" />
+      <change beforePath="$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php" afterPath="$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php" />
+      <change beforePath="$PROJECT_DIR$/app/src/Twig/AppExtension.php" afterPath="$PROJECT_DIR$/app/src/Twig/AppExtension.php" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html.twig" afterPath="$PROJECT_DIR$/app/templates/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/templates/micro-post/post.html.twig" afterPath="$PROJECT_DIR$/app/templates/micro-post/post.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig" afterPath="$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +27,7 @@
       <file leaf-file-name="Notification.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/Entity/Notification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-803">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -49,14 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LikeNotificationSubscriber.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LikeNotificationSubscriber.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="623">
+              <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
               <folding>
-                <element signature="e#38#63#0#PHP" expanded="true" />
+                <element signature="e#37#69#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="raw-post.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,28 +74,20 @@
       <file leaf-file-name="LikesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/Controller/LikesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+              <folding>
+                <element signature="e#34#59#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LikeNotification.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/Entity/LikeNotification.php">
+      <file leaf-file-name="services.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/services.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LikeNotificationRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/Repository/LikeNotificationRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="187">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,9 +96,25 @@
       <file leaf-file-name="NotificationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/Controller/NotificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="216">
+              <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+              <folding>
+                <element signature="e#1234#1272#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/notification/notifications.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#1029#1044#0#Twig" expanded="true" />
+                <element signature="e#1254#1269#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,9 +122,23 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1476">
-              <caret line="82" column="37" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="54">
+              <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+              <folding>
+                <element signature="e#1147#1163#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppExtension.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/Twig/AppExtension.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+              <folding>
+                <element signature="e#28#60#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,9 +158,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/Controller/AboutController.php" />
         <option value="$PROJECT_DIR$/app/templates/blog/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/src/Twig/AppExtension.php" />
         <option value="$PROJECT_DIR$/app/templates/blog/post.html.twig" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/app/.gitignore" />
@@ -152,12 +182,10 @@
         <option value="$PROJECT_DIR$/app/src/Form/UserType.php" />
         <option value="$PROJECT_DIR$/app/templates/register/register.html.twig" />
         <option value="$PROJECT_DIR$/app/src/Controller/RegisterController.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yaml" />
         <option value="$PROJECT_DIR$/app/vendor/symfony/security-core/Authorization/Voter/TraceableVoter.php" />
         <option value="$PROJECT_DIR$/app/src/DataFixtures/AppFixtures.php" />
         <option value="$PROJECT_DIR$/app/src/Security/MicroPostVoter.php" />
         <option value="$PROJECT_DIR$/app/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig" />
         <option value="$PROJECT_DIR$/app/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/app/config/routes.yaml" />
         <option value="$PROJECT_DIR$/app/templates/micro-post/user-posts.html.twig" />
@@ -167,16 +195,20 @@
         <option value="$PROJECT_DIR$/app/src/Controller/MicroPostController.php" />
         <option value="$PROJECT_DIR$/app/src/Entity/MicroPost.php" />
         <option value="$PROJECT_DIR$/app/src/Controller/FollowingController.php" />
-        <option value="$PROJECT_DIR$/app/src/Controller/LikesController.php" />
         <option value="$PROJECT_DIR$/app/templates/micro-post/post.html.twig" />
         <option value="$PROJECT_DIR$/app/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/src/Repository/LikeNotificationRepository.php" />
         <option value="$PROJECT_DIR$/app/src/Repository/NotificationRepository.php" />
-        <option value="$PROJECT_DIR$/app/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/src/Controller/NotificationController.php" />
         <option value="$PROJECT_DIR$/app/src/Entity/LikeNotification.php" />
         <option value="$PROJECT_DIR$/app/src/Entity/Notification.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yaml" />
+        <option value="$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig" />
+        <option value="$PROJECT_DIR$/app/src/Controller/LikesController.php" />
         <option value="$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php" />
+        <option value="$PROJECT_DIR$/app/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/src/Twig/AppExtension.php" />
+        <option value="$PROJECT_DIR$/app/src/Controller/NotificationController.php" />
+        <option value="$PROJECT_DIR$/app/templates/notification/notifications.html.twig" />
       </list>
     </option>
   </component>
@@ -296,10 +328,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="128" />
-    <option name="y" value="72" />
-    <option name="width" value="1364" />
-    <option name="height" value="340" />
+    <option name="x" value="149" />
+    <option name="y" value="34" />
+    <option name="width" value="1361" />
+    <option name="height" value="594" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -317,6 +349,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sf4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sf4" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -334,7 +377,20 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="sf4" type="cbb8eebc:String" user="sf4" />
               <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="config" type="cbb8eebc:String" user="config" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="sf4" type="cbb8eebc:String" user="sf4" />
+              <item name="app" type="cbb8eebc:String" user="app" />
               <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="sf4" type="cbb8eebc:String" user="sf4" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="Controller" type="cbb8eebc:String" user="Controller" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -343,16 +399,25 @@
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="EventListener" type="cbb8eebc:String" user="EventListener" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="sf4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sf4" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="sf4" type="cbb8eebc:String" user="sf4" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="Twig" type="cbb8eebc:String" user="Twig" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="sf4" type="cbb8eebc:String" user="sf4" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="sf4" type="cbb8eebc:String" user="sf4" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+              <item name="notification" type="cbb8eebc:String" user="notification" />
             </path>
           </expand>
           <select />
@@ -427,28 +492,29 @@
       <workItem from="1552845238260" duration="73000" />
       <workItem from="1552931821290" duration="670000" />
       <workItem from="1552932503190" duration="5398000" />
-      <workItem from="1553019974576" duration="3035000" />
+      <workItem from="1553019974576" duration="3631000" />
+      <workItem from="1553104947269" duration="5145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154082000" />
+    <option name="totallyTimeSpent" value="159823000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="128" y="72" width="1364" height="340" extended-state="0" />
+    <frame x="149" y="34" width="1361" height="594" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25569043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26007605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.93227094" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24279211" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -489,20 +555,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/docker/nginx/default.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -598,20 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -764,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,34 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Controller/LikesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="82" column="37" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Repository/LikeNotificationRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Controller/NotificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -818,36 +831,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Entity/Notification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-803">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190319185025.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190318181737.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190319185036.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190319185025.php" />
+    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190318181737.php" />
+    <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190319185036.php" />
     <entry file="file://$PROJECT_DIR$/app/src/Migrations/Version20190313181506.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -861,12 +853,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/micro-post/raw-post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Controller/LikesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+          <folding>
+            <element signature="e#34#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/EventListener/LikeNotificationSubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="623">
+          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
           <folding>
-            <element signature="e#38#63#0#PHP" expanded="true" />
+            <element signature="e#37#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding>
+            <element signature="e#1147#1163#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Twig/AppExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="67" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+          <folding>
+            <element signature="e#28#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Controller/NotificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="47" column="26" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding>
+            <element signature="e#1234#1272#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/notification/notifications.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#1029#1044#0#Twig" expanded="true" />
+            <element signature="e#1254#1269#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

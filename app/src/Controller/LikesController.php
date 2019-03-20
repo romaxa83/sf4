@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\MicroPost;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/likes")
  */
-class LikesController extends Controller
+class LikesController extends AbstractController
 {
     /**
      * @Route("/like/{id}", name="likes_like")
@@ -28,7 +28,8 @@ class LikesController extends Controller
             return new JsonResponse([],Response::HTTP_UNAUTHORIZED);
         }
 
-        $microPost->getLikedBy()->removeElement($currentUser);
+
+        $microPost->like($currentUser);
         $this->getDoctrine()->getManager()->flush();
 
         return new JsonResponse([
@@ -48,7 +49,7 @@ class LikesController extends Controller
             return new JsonResponse([],Response::HTTP_UNAUTHORIZED);
         }
 
-        $microPost->like($currentUser);
+        $microPost->getLikedBy()->removeElement($currentUser);
         $this->getDoctrine()->getManager()->flush();
 
         return new JsonResponse([
