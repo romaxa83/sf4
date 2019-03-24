@@ -3,8 +3,10 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+#Глобальные параметры
 parameters:
     locale: 'ru'
+    email_from: '%env(MAILER_FROM)%'
 
 services:
     # default configuration for services in *this* file
@@ -32,9 +34,9 @@ services:
         arguments:
             $message: 'Hello my dear '
 
-#    App\Twig\AppExtension:
-#        arguments:
-#            $locale: '%locale%'
+    App\Mailer\Mailer:
+        arguments:
+            $mailFrom: '%email_from%'
 
     App\EventListener\LikeNotificationSubscriber:
         tags:

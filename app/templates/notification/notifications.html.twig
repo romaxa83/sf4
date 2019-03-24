@@ -8,18 +8,18 @@
             </div>
 
             <ul class="list-group list-group-flush">
-                {#<li class="list-group-item">#}
-                    {#<a class="btn btn-block btn-default btn-link btn-outline-info"#}
-                       {#href="{{ path('notification_acknowledge_all') }}">#}
-                        {#Mark all as read#}
-                    {#</a>#}
-                {#</li>#}
+                <li class="list-group-item">
+                    <a class="btn btn-block btn-default btn-link btn-outline-info"
+                       href="{{ path('notification_acknowledge_all') }}">
+                        Mark all as read
+                    </a>
+                </li>
                 {% for notification in notifications %}
                     <li class="list-group-item">
-                        {#<a href="{{ path('notification_acknowledge', {'id': notification.id}) }}"#}
-                           {#class="btn btn-sm btn-primary float-right">#}
-                            {#OK#}
-                        {#</a>#}
+                        <a href="{{ path('notification_acknowledge', {'id': notification.id}) }}"
+                           class="btn btn-sm btn-primary float-right">
+                            OK
+                        </a>
                         {% if notification is like %}
                             <a href="{{ path('micro_post_user', {'username': notification.likedBy.username}) }}">
                                 {{ notification.likedBy.username }}</a>
@@ -29,10 +29,10 @@
                     </li>
                 {% endfor %}
             </ul>
-        {#{% else %}#}
-            {#<div class="card-body">#}
-                {#You have not notifications#}
-            {#</div>#}
+        {% else %}
+            <div class="card-body">
+                You have not notifications
+            </div>
         {% endif %}
     </div>
 {% endblock %}
